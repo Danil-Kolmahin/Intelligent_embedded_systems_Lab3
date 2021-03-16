@@ -9,10 +9,10 @@ const FermatFactorization = (n) => {
     }
 }
 
-const composition = 10873
-const requiredNumbers = [83, 131]
-
-console.log(
-    FermatFactorization(composition)[0] === requiredNumbers[0] ? '\x1b[32m%s\x1b[0m' : '\x1b[31m%s\x1b[0m',
-    FermatFactorization(composition)
-)
+const readline = require('readline')
+readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+}).on('line', (composition) => {
+    console.log(FermatFactorization(composition))
+})
