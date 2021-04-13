@@ -1,4 +1,4 @@
-const FermatFactorization = (n) => {
+export const FermatFactorization = (n) => {
     const s = Math.ceil(Math.sqrt(n))
     const maximumIterationsNumber = 100
     let y
@@ -9,4 +9,10 @@ const FermatFactorization = (n) => {
     }
 }
 
-console.log(FermatFactorization(14647))
+const composition = 10873
+const requiredNumbers = [83, 131]
+
+console.log(
+    FermatFactorization(composition)[0] === requiredNumbers[0] ? '\x1b[32m%s\x1b[0m' : '\x1b[31m%s\x1b[0m',
+    FermatFactorization(composition)
+)

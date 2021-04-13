@@ -1,6 +1,6 @@
 const second = 1000
 
-const perceptronModel = (
+export const perceptronModel = (
     {
         P = 1,
         func = (dot, wArray) => dot.reduce((res, x, i) => res + x * wArray[i], 0),
@@ -56,12 +56,12 @@ const perceptronModel = (
 // const dots = [[0, 6], [1, 5], [3, 3], [2, 4]]
 // const P = 4
 
-console.log(
-    perceptronModel({
-        P: 4,
-        dots: [[1, 5], [2, 4]],
-        learningSpeed: 0.1,
-        timeDeadline: 0,
-        //iterationsNumber: 7
-    })//.wArray[0] === -1.1362560000000017
-)
+// console.log(
+//     perceptronModel({
+//         P: 4,
+//         dots: [[1, 5], [2, 4]],
+//         learningSpeed: 0.1,
+//         timeDeadline: 0,
+//         //iterationsNumber: 7
+//     })//.wArray[0] === -1.1362560000000017
+// )
