@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ad5d885-5a12-4473-a5d0-0cf75a1f0f98" name="Default Changelist" comment="Lab 3.2">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab3_1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab3_2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab3_3.js" beforeDir="false" />
+    <list default="true" id="7ad5d885-5a12-4473-a5d0-0cf75a1f0f98" name="Default Changelist" comment="Labs 3.1 - 3.3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +11,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/components/Lab3_3.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1ppnvgHsqeuKV0KOTTbcDzt2DcE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -66,7 +66,9 @@
       <workItem from="1615889139325" duration="1293000" />
       <workItem from="1615913760385" duration="120000" />
       <workItem from="1616064237784" duration="158000" />
-      <workItem from="1618323227819" duration="545000" />
+      <workItem from="1618323227819" duration="1204000" />
+      <workItem from="1618324882653" duration="417000" />
+      <workItem from="1618325351792" duration="285000" />
     </task>
     <task id="LOCAL-00001" summary="Lab 3.1">
       <created>1615889827976</created>
@@ -82,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618323394691</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Labs 3.1 - 3.3">
+      <created>1618324353009</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1618324353009</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +112,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lab 3.1" />
     <MESSAGE value="Lab 3.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lab 3.2" />
+    <MESSAGE value="Labs 3.1 - 3.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Labs 3.1 - 3.3" />
   </component>
 </project>
