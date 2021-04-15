@@ -1,13 +1,13 @@
 const second = 1000
 
-export const perceptronModel = (
+const perceptronModel = (
     {
         P = 1,
         func = (dot, wArray) => dot.reduce((res, x, i) => res + x * wArray[i], 0),
-        dots = [[0, 0]],
+        dots = [[0, 0,],],
         learningSpeed = 0.1,
         timeDeadline = null,
-        iterationsNumber = null
+        iterationsNumber = null,
     } = {}
 ) => {
     if (iterationsNumber) {
@@ -38,17 +38,29 @@ export const perceptronModel = (
                         w2: P - getDelta(1),
                         iteration,
                     }, null, 2)
-                }
+                },
             }
         }
         // getting deltas
         let delta = getDelta(iteration % dots.length)
         wArray = wArray.map((w, i) => w + delta * dots[iteration % dots.length][i] * learningSpeed)
-        console.log(wArray)
+        // console.log(wArray)
     }
     clearTimeout(timeOut)
     return 'iteration >= iterationsNumber'
 }
+
+const array = []
+for (let i = 1; i < 100; i++) {
+    array.push(perceptronModel({
+        P: 4,
+        dots: [[1, 5,], [2, 4,],],
+        learningSpeed: 0.001 * i,
+        iterationsNumber: 999,
+    }))
+}
+console.log(array)
+export const perceptronModelFunc = (x) => array[x].iteration
 
 // const learningSpeeds = [0.001, 0.01, 0.05, 0.1, 0.2, 0.3]
 // const iterationsNumber = [100, 200, 500, 1000]

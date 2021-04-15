@@ -1,4 +1,4 @@
-export const makeRandomWithin = (max = 1, min = 0) => Math.ceil(Math.random() * (max - min + 1)) + min - 1
+export const makeRandomWithin = (max = 1, min = 0) => Math.ceil(Math.random() * (max - min - 1)) + min
 
 export const generateChromosome = (chromosomesNumber, geneNumber, min, max) => new Array(chromosomesNumber)
     .fill([], 0, chromosomesNumber)
@@ -7,7 +7,7 @@ export const generateChromosome = (chromosomesNumber, geneNumber, min, max) => n
         .map(() => makeRandomWithin(max, min))
     )
 
-export const geneticCalculations = (chromosomes, options = {}) => new Promise(r => {
+export const geneticCalculations = (chromosomes, options = {}) => {
     let count = 0
     while (count < 10000) {
         // console.log(chromosomes)
@@ -20,7 +20,7 @@ export const geneticCalculations = (chromosomes, options = {}) => new Promise(r 
 
         // checking if any delta === 0
         const findResult = chromosomes.find((_, i) => deltaValues[i] === 0)
-        if (findResult) r({
+        if (findResult) return {
             chromosomes,
             deltaValues,
             findResult,
@@ -30,10 +30,10 @@ export const geneticCalculations = (chromosomes, options = {}) => new Promise(r 
                     chromosomes: JSON.stringify(chromosomes),
                     deltaValues: JSON.stringify(deltaValues),
                     findResult: JSON.stringify(findResult),
-                    count
+                    count,
                 }, null, 2)
-            }
-        }.toString())
+            },
+        }
         count++
 
         // calculating the chances of becoming a parent
@@ -72,20 +72,41 @@ export const geneticCalculations = (chromosomes, options = {}) => new Promise(r 
 
         chromosomes = children
     }
-    r('count is over 9999')
-})
+    return 'count is over 9999'
+}
 
 // export const asyncGeneticCalculations = (params, isString = true) => new Promise(r => r(geneticCalculations(params).toString()))
 
-console.log(geneticCalculations(generateChromosome(4, 4, 1, 5), {
-    abcArgs: [1, 1, 2, 4],
-    yArg: 21,
+// console.log(geneticCalculations(generateChromosome(4, 4, 1, 5), {
+// 	abcArgs: [1, 1, 2, 4,],
+// 	yArg: 21,
+//
+// 	minGeneValue: 1,
+// 	maxGeneValue: 5,
+//
+// 	crossoverLine: 2,
+//
+// 	minMutationsValue: -1,
+// 	maxMutationsValue: 1,
+// }))
 
-    minGeneValue: 1,
-    maxGeneValue: 5,
+const array = []
+const chromosomesArray = generateChromosome(200, 4, -10, 10)
+for (let i = 1; i < 100; i++) {
+    array.push(geneticCalculations(chromosomesArray.slice(0, 2 * i), {
+        abcArgs: [9, 5, 3, 7,],
+        yArg: 0,
 
-    crossoverLine: 2,
+        minGeneValue: -10,
 
-    minMutationsValue: -1,
-    maxMutationsValue: 1,
-}))
+        maxGeneValue: 10,
+
+        crossoverLine: 2,
+
+        minMutationsValue: -2,
+        maxMutationsValue: 2,
+    }))
+}
+console.log(chromosomesArray)
+console.log(array)
+export const geneticCalculationsFunc = (x) => array[x].count
